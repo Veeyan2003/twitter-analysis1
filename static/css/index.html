@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentiment Analysis</title>
+  <link rel="stylesheet" href="indexstyle.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+  <header class="title">
+    <div class="h1-container">
+      <h1 class="big-text">Twitter Sentiment Analysis</h1>
+    </div>
+  </header>
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      Veeyan Sequeira
+    </div>
+  </div>
+  <a href="#" class="about-me-btn" onclick="toggleSidebar()">About Me</a>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mb-4">
+        <div class="card form-card">
+          <div class="card-body">
+            <h5 class="card-title text-center mb-4">Phrase Level Sentiment Analysis</h5>
+            <form action="/predict" method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="csv_file">Upload CSV file</label>
+                <input type="file" class="form-control-file" name="csv_file" id="csv_file" accept=".csv">
+              </div>
+              <button name="submit" type="submit" class="btn btn-primary btn-block">Predict!</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card form-card">
+          <div class="card-body">
+            <h5 class="card-title text-center mb-4">Sentence Level Sentiment Analysis</h5>
+            <form action="/predict1" method="post">
+              <div class="form-group">
+                <input type="text" class="form-control" name="txt" placeholder="Enter a sentence" autocomplete="off">
+              </div>
+              <button name="submit" type="submit" class="btn btn-primary btn-block">Predict!</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script>
+    function toggleSidebar() {
+      var sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
