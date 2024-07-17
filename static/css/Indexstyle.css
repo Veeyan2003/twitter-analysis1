@@ -8,6 +8,22 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl,
 *, *::before, *::after {
     box-sizing: border-box;
 }
+/* Styles for dark theme */
+.dark-theme {
+    background-color: #1a1a1a; /* Dark background color */
+    color: #ffffff; /* Light text color */
+  }
+  
+  .dark-theme .big-text {
+    color: #ffffff; /* Light text color for h1 */
+    top: 20px;
+    position: absolute;
+    display: flex;
+    font-size: 3rem;
+    color: transparent;
+    -webkit-text-stroke: 3px rgb(20, 17, 10);
+  }
+  
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -47,15 +63,8 @@ margin: 0;
 padding: 0;
 }
 
-.big-text {
-    top: 20px;
-    position: absolute;
-    display: flex;
-    font-size: 3rem;
-    color: transparent;
-    -webkit-text-stroke: 3px rgb(20, 17, 10);
-}
-.big-text::before{
+
+.dark-theme .big-text::before{
     content:"Twitter Sentiment Analysis";
     position: absolute;
     width: 0%;
@@ -65,7 +74,7 @@ padding: 0;
     border-right: 8px solid rgb(7, 3, 5);
     transition: 2s ease-in-out;
 }
-.big-text:hover::before{
+.dark-theme .big-text:hover::before{
     width: 100%;
     filter: drop-shadow(0 0 25px rgb(117, 68, 169));
 }
